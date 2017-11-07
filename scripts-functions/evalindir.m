@@ -1,7 +1,9 @@
 function varargout = evalindir(otherDir, varargin)
 %EVALINDIR executes a script or function in another directory and 
 %   switches the working directory back to the original directory
-%   
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
   origDir               = pwd;
   cd(otherDir)
   try

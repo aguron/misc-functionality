@@ -1,5 +1,18 @@
 function s = renamefield(s, oldnames, newnames)
-%RENAMEFIELD
+%RENAMEFIELD renames field(s) of a structure or structure array
+%
+% INPUTS:
+%
+% s         - structure or structure array
+% oldnames	- field name or cell array of field names to be changed
+% newnames	- new field name or cell array of field names
+%
+% OUTPUTS:
+%
+% s         - modified structure or structure array
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
   if ischar(oldnames)
     oldnames              = {oldnames};
   end % if ischar(oldnames)

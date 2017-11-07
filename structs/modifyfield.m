@@ -1,6 +1,21 @@
 function s = modifyfield(s, field, rule)
-%MODIFYFIELD
+%MODIFYFIELD applies function(s) to value(s) of field(s) of structure
+%   of structure array
 %
+% INPUTS:
+%
+% s   	- structure or structure array
+% field	- field or cell array of fields with a value or values to be
+%         modified
+% rule	- handle or cell array of handle(s) of function(s) to be applied
+%         to the fields
+%
+% OUTPUTS:
+%
+% s     - modified structure or structure array
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
   if ischar(field)
     field             = {field};
     rule              = {rule};

@@ -1,6 +1,25 @@
 function makelegend(plotObjSpecs, varargin)
-%MAKELEGEND
-% 
+%MAKELEGEND generates a legend for a line or bar plot
+%
+% INPUTS:
+%
+% plotObjSpecs	- structure whose i-th entry (corresponding to the i-th
+%                 plot line or bar) has fields
+%                   LineStyle     -- plot line or bar edge line style
+%                   LineWidth     -- plot line or bar edge line width
+%                   legendEntry  	-- plot line or bar legend entry
+%            EITHER:
+%                   Marker        -- plot line marker
+%                   Color         -- plot line color
+%                OR:
+%                   FaceColor     -- bar face color
+%                   EdgeColor     -- bar edge color
+%                   barWidth      -- bar width
+% OPTIONAL ARGUMENTS:
+%
+% FontSize    	- font size specification for axes handle
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
 
   FontSize	= 24;
   assignopts(who, varargin);

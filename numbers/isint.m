@@ -1,6 +1,7 @@
 function b = isint(A)
 %ISINT
-% 
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
   
   A(isinf(A) | isnan(A))  	= 0.5;
     

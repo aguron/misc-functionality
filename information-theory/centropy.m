@@ -1,6 +1,26 @@
 function H = centropy(arg,cVar,varargin)
-%CENTROPY computes conditional entropy
-%   
+%CENTROPY computes conditional entropy H(X|Y) (in bits) from a probability
+%   distribution or from samples of 2 discrete random variables
+%
+% INPUTS:
+%
+% arg         - probability distribution or samples of discrete random
+%               variables (in rows of a 2-D numeric array)
+% cVar        - vector with true boolean values indicating which dimensions
+%               or columns of the input argument ARG correspond to discrete
+%               random variable, Y
+%
+% OUTPUTS:
+%
+% H           - conditional entropy H(X|Y) (in bits)
+%
+% OPTIONAL ARGUMENTS:
+%
+% inputType   - ('probdist' or 'variable') specifies whether the input
+%               argument ARG is a probability distribution or samples of
+%               discrete random variables (default: 'probdist')
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
 
   inputType   = 'probdist';
   assignopts(who, varargin);

@@ -1,5 +1,18 @@
 function B = apwfun(f,varargin)
-%APWFUN ARRAY PAGE-WISE FUNCTION
+%APWFUN ARRAY PAGE-WISE FUNCTION applies a function f to all the pages of
+%   multidimensional arrays
+%
+% INPUTS:
+%
+% f           - handle of function f
+% varargin    - the pages of the multidimensional input arguments in
+%               in varargin are the input arguments to the function f
+%
+% OUTPUTS:
+%
+% B           - output multidimensional array
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
 %   
   nDim      = ndims(varargin{1});
   for i=2:(nargin-1)

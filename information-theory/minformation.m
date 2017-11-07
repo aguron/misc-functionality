@@ -1,6 +1,27 @@
 function I = minformation(arg,mVar,varargin)
-%MINFORMATION computes mutual information
-%   
+%MINFORMATION computes mutual information (in bits) from a probability
+%   distribution or from samples of 2 discrete random variables
+%
+% INPUTS:
+%
+% arg         - probability distribution or samples of discrete random
+%               variables (in rows of a 2-D numeric array)
+% mVar        - vector with true boolean values indicating which dimensions
+%               or columns of the input argument ARG correspond to one of
+%               the discrete random variables
+%
+% OUTPUTS:
+%
+% I           - mutual information (in bits)
+%
+% OPTIONAL ARGUMENTS:
+%
+% inputType   - ('probdist' or 'variable') specifies whether the input
+%               argument ARG is a probability distribution or samples of
+%               discrete random variables (default: 'probdist')
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
   inputType           = 'probdist';
   assignopts(who, varargin);
 

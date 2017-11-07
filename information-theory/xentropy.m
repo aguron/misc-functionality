@@ -1,6 +1,26 @@
 function H = xentropy(argP,argQ,varargin)
-%XENTROPY
-%   
+%XENTROPY computes the cross entropy (in bits) from probability
+%   distributions or from samples of two discrete random variables
+%
+% INPUTS:
+%
+% argP       	- first probability distribution or discrete random variable
+%               samples (in rows of a 2-D numeric array)
+% argQ       	- second probability distribution or discrete random variable
+%               samples (in rows of a 2-D numeric array)
+%
+% OUTPUTS:
+%
+% H           - cross entropy (in bits)
+%
+% OPTIONAL ARGUMENTS:
+%
+% inputType   - ('probdist' or 'variable') specifies whether the input
+%               arguments ARGP and ARGQ are probability distributions or
+%               discrete random variable samples (default: 'probdist')
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
 
   inputType   = 'probdist';
   assignopts(who, varargin);

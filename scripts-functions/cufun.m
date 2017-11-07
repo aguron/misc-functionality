@@ -1,6 +1,24 @@
-function varargout = mufun(f,varargin)
-%MUFUN MERGE-UNMERGE FUNCTION
+function varargout = cufun(f,varargin)
+%MUFUN CONCATENATE-UNCONCATENATE FUNCTION applies a function to
+%   concatenated cell array entries
 %
+% INPUTS:
+%
+% f             - cell array with two entries. The first is the handle of 
+%                 the function to be applied to arguments derived from
+%                 concatenating the entries for each cell array (input 
+%                 argument) in varargin. The second specifies which output
+%                 arguments will be unconcatenated
+% varargin    	- each input argument is a cell array corresponding to an
+%                 argument of the function f. The entries for each cell
+%                 array are concatenated before the function f is applied
+%
+% OUTPUTS:
+%
+% varargout     - output arguments of function f (which may or may not be
+%                 unconcatenated)
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
 
   for i=1:(nargin-1)
    if ~iscell(varargin{i})
@@ -18,7 +36,7 @@ function varargout = mufun(f,varargin)
    end % if ~isequal(size(varargin{i}), sInput)
   end % for i=2:(nargin-1)
 
-  % Merge
+  % Concatenate
   A                     = cell(nargin-1,1);
   for i=1:(nargin-1)
    if (sInput(1) == 1)
@@ -45,7 +63,7 @@ function varargout = mufun(f,varargin)
 
   for i=1:numel(B)
    if f{2}(i)
-    % Unmerge
+    % Unconcatenate
     if (sInput(1) == 1)
      idxLim             = [1-size(varargin{1}{1},2) 0];
     elseif (sInput(2) == 1)

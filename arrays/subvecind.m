@@ -1,6 +1,19 @@
 function ind = subvecind(subInd,subDim,superInd)
-%SUBVECIND
-% 
+%SUBVECIND prepares indices for an array according to a pattern
+%
+% INPUTS:
+%
+% subInd    - vector of indices for subarrays within the array (a cell
+%             array is used when the indices for subarrays differ)
+% subDim    - vector of subarray lengths
+% superInd  - vector of indices for subarray selection
+%
+% OUTPUTS:
+%
+% ind       - indices for array
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
 % EXAMPLES:
 %   subvecind([1 2], 2, [1 3 6])
 %   ans =

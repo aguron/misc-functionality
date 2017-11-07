@@ -1,5 +1,18 @@
 function programcontrol(varargin)
-%PROGRAMCONTROL
+%PROGRAMCONTROL sets a breakpoint on the line after the call to
+%   PROGRAMCONTROL within the caller function if a file named
+%   controlswitch is present in the folder path passed as an input
+%   argument to PROGRAMCONTROL. (Consequently, execution of the
+%   caller function is stopped at the breakpoint.) Please see
+%   USERCONTROL.
+%
+% OPTIONAL ARGUMENTS:
+%
+% varargin    - path of folder in which PROGRAMCONTROL checks for
+%               file named controlswitch (default: '.')
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
+
   if isempty(varargin)
     controlDir	= '.';
   else % if ~isempty(varargin)

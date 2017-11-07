@@ -1,6 +1,23 @@
 function H = entropy2(arg,varargin)
-%ENTROPY2
-%   
+%ENTROPY2 computes the information entropy (in bits) from a probability
+%   distribution or from samples of a discrete random variable
+%
+% INPUTS:
+%
+% arg         - probability distribution or discrete random variable
+%               samples (in rows of a 2-D numeric array)
+%
+% OUTPUTS:
+%
+% H           - information entropy (in bits)
+%
+% OPTIONAL ARGUMENTS:
+%
+% inputType   - ('probdist' or 'variable') specifies whether the input
+%               argument ARG is a probability distribution or discrete
+%               random variable samples (default: 'probdist')
+%
+% @ 2017 Akinyinka Omigbodun    aomigbod@ucsd.edu
 
   inputType   = 'probdist';
   assignopts(who, varargin);
@@ -9,7 +26,7 @@ function H = entropy2(arg,varargin)
     case 'variable'
       X       = arg;
       if ~isnumeric(X) || (ndims(X)~=2)
-        error('variable input must be a 2-d matrix');
+        error('variable input must be a 2-D matrix');
       end % if ~isnumeric(X) || (ndims(X)~=2)
       uX      = unique(X,'rows');
       nX      = size(uX,1);
@@ -31,6 +48,6 @@ function H = entropy2(arg,varargin)
     error('Invalid probability distribution');
   end % if abs(ndarraysum(p) - 1) > (1e1*eps)
 
-  p           = rmentries(p, @(x) (x <= 0));
+  p           = rmentries(p, @(x) (x == 0));
   H           = -ndarraysum(p.*log2(p));
 end
